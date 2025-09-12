@@ -17,16 +17,16 @@
     'use strict';
 
     var working = false;
-    var scrollAction = function() {
+    var scrollAction = function () {
         working = false;
     };
 
     var setDirection = {
         bgVertical: function (elem, bgOffset) {
-            return elem.css({'background-position': 'center ' + -bgOffset + 'px'});
+            return elem.css({ 'background-position': 'center ' + -bgOffset + 'px' });
         },
         bgHorizontal: function (elem, bgOffset) {
-            return elem.css({'background-position': -bgOffset + 'px' + ' center'});
+            return elem.css({ 'background-position': -bgOffset + 'px' + ' center' });
         },
         vertical: function (elem, elemOffset, oldTransform) {
             (oldTransform === 'none' ? oldTransform = '' : true);
@@ -91,12 +91,12 @@
 
     var clearPositions = {
         background: function (elem) {
-            return elem.css({'background-position': 'unset'});
+            return elem.css({ 'background-position': 'unset' });
         },
         foreground: function (elem) {
             return elem.css({
-                'transform' : 'unset',
-                'transition' : 'unset'
+                'transform': 'unset',
+                'transition': 'unset'
             });
         }
     };
@@ -160,7 +160,7 @@
                 bgOffset = Math.round(offset * factor);
                 transform = Math.round((offset - (windowHeight / 2) + height) * factor);
 
-                if (! working) {
+                if (!working) {
                     window.requestAnimationFrame(scrollAction);
                     working = true;
                 }
@@ -192,7 +192,7 @@
                 bgOffset = Math.round((offset - scrolling) * factor);
                 transform = Math.round(((offset - (windowHeight / 2) + height) - scrolling) * factor);
 
-                if (! working) {
+                if (!working) {
                     window.requestAnimationFrame(scrollAction);
                     working = true;
                 }

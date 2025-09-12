@@ -5639,6 +5639,8 @@ border-style: solid;
 	margin-bottom: 25px;
 }
 .bsingle__content .blog__btn .btn {
+    margin: 0;
+    padding: 15px;
 	font-size: 16px;
 }
 
